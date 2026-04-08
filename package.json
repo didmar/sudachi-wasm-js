@@ -1,0 +1,11 @@
+{
+  "name": "sudachi-wasm-js",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "build:host": "tsx scripts/build-host.mts"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}

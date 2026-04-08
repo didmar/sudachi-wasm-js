@@ -1,0 +1,23 @@
+{
+  "name": "@didmar/sudachi-dic-converter-linux-x64",
+  "version": "0.6.11-didmar.0",
+  "description": "Prebuilt Sudachi dictionary converter for Linux x64",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/didmar/sudachi-wasm-js.git",
+    "directory": "packages/sudachi-dic-converter-linux-x64"
+  },
+  "files": [
+    "bin"
+  ],
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "bin": {
+    "dic_converter": "./bin/dic_converter"
+  }
+}

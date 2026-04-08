@@ -1,0 +1,21 @@
+{
+  "name": "@didmar/sudachi-wasm",
+  "version": "0.6.11-didmar.0",
+  "description": "Prebuilt Node.js/WebAssembly Sudachi runtime artifacts",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/didmar/sudachi-wasm-js.git",
+    "directory": "packages/sudachi-wasm"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sudachi_wasm.js",
+  "types": "./dist/sudachi_wasm.d.ts",
+  "exports": {
+    ".": "./dist/sudachi_wasm.js",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false
+}

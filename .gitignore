@@ -1,0 +1,8 @@
+node_modules
+.pnpm-store
+.cache
+packages/*/README.md
+packages/*/dist/*
+packages/*/bin/*
+!packages/sudachi-wasm/dist/.gitkeep
+!packages/sudachi-dic-converter-linux-x64/bin/.gitkeep

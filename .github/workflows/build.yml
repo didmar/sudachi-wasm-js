@@ -1,0 +1,43 @@
+name: Build Packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-linux-x64:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install wasm-pack
+        run: cargo install wasm-pack
+
+      - name: Install workspace deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build host packages
+        run: pnpm build:host
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sudachi-packages-linux-x64
+          path: |
+            packages/sudachi-wasm
+            packages/sudachi-dic-converter-linux-x64
